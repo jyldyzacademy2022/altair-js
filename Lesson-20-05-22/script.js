@@ -78,3 +78,11 @@ let posts = [
 ];
 
 console.log(posts);
+
+let imgLinks = [
+  "https://cdn.pixabay.com/photo/2022/05/10/20/52/calligraphy-7188024_960_720.jpg",
+  "https://cdn.pixabay.com/photo/2022/05/17/17/55/zebra-7203335_960_720.jpg",
+];
+
+const img = document.querySelector(".hero .img");
+img.src = imgLinks[1];
