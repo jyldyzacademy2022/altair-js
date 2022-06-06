@@ -1,0 +1,9 @@
+Открыть страницу: https://developer.mozilla.org/ru/docs/Web/API/Document
+
+Работа в консоли:
+- найти самый главный заголовок h1
+- найти все ссылки на странице
+- найти все теги li
+- найти элемент с классом page-wrapper
+- найти элемент с классом document-toc-list который вложен в класс document-toc-container
+
