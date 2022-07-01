@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .result {
+        display: inline-block;
+        padding: 10px;
+        background-color: yellow;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body class="active">
+    <h1 class="title">Calculator</h1>
+    Число 1: <input data-number-1="" type="text" /> Оператор (+, -, *, /)
+    <input data-operator="" type="text" /> Число 2:<input
+      data-number-2=""
+      type="text"
+    />
+    <button class="btn">=</button>
+    <span class="result" id="result">0</span>
+
+    <script>
+      const num1 = document.querySelector("[data-number-1]");
+      const num2 = document.querySelector("[data-number-2]");
+      const operator = document.querySelector("[data-operator]");
+      const result = document.querySelector("#result");
+      const btn = document.querySelector(".btn");
+
+      function calculate(num1, num2, operator) {
+        let result = 0;
+        switch (operator) {
+          case "+":
+            result = num1 + num2;
+            break;
+          case "-":
+            result = num1 - num2;
+            break;
+          case "*":
+            result = num1 * num2;
+            break;
+          case "/":
+            result = num1 / num2;
+            break;
+        }
+        return result;
+      }
+
+      btn.addEventListener("click", function () {
+        const num1Value = parseFloat(num1.value);
+        const num2Value = parseFloat(num2.value);
+        const operatorValue = operator.value;
+
+        const resultValue = calculate(num1Value, num2Value, operatorValue);
+
+        result.innerHTML = resultValue;
+      });
+
+      num1.addEventListener("blur", function () {
+        num1.style.backgroundColor = "red";
+      });
+    </script>
+  </body>
+</html>
