@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function User(name, age) {
+      //   this.name = name;
+      //   this.age = age;
+      // }
+
+      // User.prototype.sayName = function () {
+      //   console.log(this.name);
+      // };
+
+      // User.prototype.sayAge = function () {
+      //   console.log(this.age);
+      // };
+
+      // const vasya = new User("Vasya", 25);
+      // console.log(vasya);
+      // vasya.sayName();
+      // const petya = new User("Petya", 30);
+      // console.log(petya);
+      // petya.sayName();
+      // const masha = new User("Masha", 35);
+      // console.log(masha);
+      // masha.sayName();
+
+      class User {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+
+        sayName() {
+          console.log(this.name);
+        }
+
+        sayAge() {
+          console.log(this.age);
+        }
+      }
+
+      class Admin extends User {
+        constructor(name, age, position) {
+          super(name, age);
+          this.position = position;
+        }
+
+        sayName() {
+          super.sayName();
+          document.write(`<h1>I am ${this.name}. Admin of this site.</h1>`);
+        }
+
+        sayPosition() {
+          console.log(this.position);
+        }
+      }
+
+      const vasya = new User("Vasya", 25);
+      console.log(vasya);
+      vasya.sayName();
+      vasya.sayAge();
+
+      const petya = new Admin("Petya", 30, "Junior");
+      console.log(petya);
+      petya.sayName();
+      petya.sayAge();
+      petya.sayPosition();
+    </script>
+  </body>
+</html>

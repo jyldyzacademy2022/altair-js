@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        padding: 30px;
+        background-color: yellow;
+      }
+
+      div {
+        padding: 20px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="div">
+        <button>Click</button>
+      </div>
+    </section>
+
+    <script>
+      const section = document.querySelector("section");
+      const div = document.querySelector("div");
+      const button = document.querySelector("button");
+
+      function handleClick(e) {
+        // if (e.target.classList.contains("div")) {
+        //   e.target.style.backgroundColor = "blue";
+        // }
+        console.log(e.target);
+      }
+
+      section.addEventListener("click", handleClick);
+      // div.addEventListener("click", handleClick);
+      // button.addEventListener("click", handleClick);
+    </script>
+  </body>
+</html>

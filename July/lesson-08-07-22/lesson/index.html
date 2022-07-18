@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .modal {
+        display: flex;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      ...
+      <a class="order" href="https://google.com">Заказать</a>
+    </header>
+
+    <div class="modal" id="modal">
+      <form method="GET">
+        <input type="text" name="user-name" />
+        <input type="text" name="phone" />
+
+        <button class="submit">Заказать звонок</button>
+      </form>
+    </div>
+
+    <script>
+      const submitBtn = document.querySelector(".submit");
+      const inputs = document.querySelectorAll("input");
+      const form = document.querySelector("form");
+
+      function validateInputs() {
+        let valid = true;
+
+        inputs.forEach((input) => {
+          if (!input.value) {
+            valid = false;
+          }
+        });
+
+        return valid;
+      }
+
+      function validateForm(e) {
+        e.preventDefault();
+
+        if (validateInputs()) {
+          console.log("Форма отправлена");
+        } else {
+          alert("Заполните все поля");
+        }
+      }
+
+      form.addEventListener("submit", validateForm);
+    </script>
+  </body>
+</html>
