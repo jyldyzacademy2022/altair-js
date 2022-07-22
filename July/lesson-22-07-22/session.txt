@@ -1,0 +1,2 @@
+У вас имеется файл users.txt = Vasya, Pete, John, Akmat, Tashmat
+С помощью XMLHttpRequest() отобразите данные из user.txt в список ul

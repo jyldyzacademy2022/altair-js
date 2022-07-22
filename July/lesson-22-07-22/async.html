@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async JS</title>
+  </head>
+  <body>
+    <button id="get-data">Загрузить данные</button>
+    <ul id="output"></ul>
+
+    <script>
+      const btn = document.querySelector("#get-data");
+
+      btn.addEventListener("click", loadData);
+
+      function loadData() {
+        const xhr = new XMLHttpRequest();
+
+        xhr.open("GET", "data.txt", true);
+        // statuses
+        // 200 = OK
+        // 404 = Not Found
+        // 500 = Server Error
+        // 403 = Forbidden
+
+        xhr.onload = function () {
+          if (this.status === 200) {
+            const data = this.responseText;
+            const output = document.querySelector("#output");
+            output.innerHTML = `
+              <p>${data}</p>
+            `;
+          }
+        };
+
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>
