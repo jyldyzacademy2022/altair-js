@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users</title>
+  </head>
+  <body>
+    <h1>Users</h1>
+
+    <ul id="users">
+      <li>
+        <a href="user/2">John</a>
+      </li>
+    </ul>
+
+    <script>
+      window.addEventListener("load", loadUsers);
+
+      function loadUsers() {
+        const xhr = new XMLHttpRequest();
+
+        xhr.open("GET", "data.txt", true);
+
+        xhr.onload = function () {
+          if (this.status === 200) {
+            const data = this.responseText;
+            const users = data.split(",");
+
+            users.map((user) => {
+              const li = document.createElement("li");
+              li.textContent = user;
+              document.querySelector("#users").appendChild(li);
+            });
+          }
+        };
+
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>

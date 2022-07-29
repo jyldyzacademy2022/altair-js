@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "name": "Leanne Graham",
+        "company": "Hello Dev",
+        "email": "hello@company.com"
+    },
+    {
+        "id": 2,
+        "name": "Ervin Howell",
+        "company": "Twitter",
+        "email": "ervin@mail.com"
+    },
+    {
+        "id": 3,
+        "name": "Clementine Bauch",
+        "company": "Google",
+        "email": "bauch@gmail.com"
+    }
+
+]
